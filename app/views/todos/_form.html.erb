@@ -1,0 +1,22 @@
+<%= form_for @todo do |f| %>
+	
+	<% if @todo.errors.any? %>
+		<h3>
+			<%= pluralize(@todo.errors.count, 'error') %>
+			prohibted this todo entry from being saved.
+		</h3>
+		<ul>
+			<% @todo.errors.full_messages do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.submit 'Add to todo list', class: 'btn btn-sucess' %>
+	</p>
+<% end %>

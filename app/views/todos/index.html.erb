@@ -1,6 +1,13 @@
 <div class="container">
 	<% @todo.each do |todo| %>
-		<h3>Title</h3>
-		<%= todo.title %>
+		<div class="todo-list">
+			<div class="margin-left">
+			<h4>Title</h4>
+			<%= todo.title %>
+			<h4>by user</h4>
+			<%= todo.user.email %>
+			</div>
+		</div>
 	<% end %>
 </div>
+<br>

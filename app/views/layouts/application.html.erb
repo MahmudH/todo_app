@@ -11,8 +11,11 @@
 <%= render 'layouts/nav' %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-success' %>
+<%= link_to 'Sign in', new_user_session_path, class: 'btn btn-danger' %>
 <%= yield %>
 <%= render 'layouts/footer' %>
+<%= link_to 'Sign in', destroy_user_session_path, :method => :delete, class: 'btn btn-danger' %>
 
 </body>
 </html>
